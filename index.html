@@ -20,11 +20,22 @@
         const svg = d3.select("svg g")
         const circleColour = colours.green[3];
         console.log("Circle colour:", circleColour);
+
+        const pulse = (e) => {
+            const selectedCircle = d3.select(e.currentTarget);
+            const selectedRadius = Number(selectedCircle.attr("r"))
+            console.log(selectedRadius)
+
+        }
         svg.append("circle")
             .attr("cx", 200)
             .attr("cy", 200)
             .attr("r", 50)
             .attr("fill", colours.blue[4])
+            .style("cursor", "pointer")
+            .on("click", pulse);
+
+
 
     </script>
 </body>
