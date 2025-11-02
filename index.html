@@ -12,6 +12,21 @@
 
 <body>
     <h1>Documentation Hierarchy Visualiser</h1>
+    <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet">
+        <g></g>
+    </svg>
+
+    <script>
+        const svg = d3.select("svg g")
+        const circleColour = colours.green[3];
+        console.log("Circle colour:", circleColour);
+        svg.append("circle")
+            .attr("cx", 200)
+            .attr("cy", 200)
+            .attr("r", 50)
+            .attr("fill", colours.blue[4])
+
+    </script>
 </body>
 
 </html>
