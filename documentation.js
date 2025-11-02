@@ -4,7 +4,7 @@ const colours = {
     green: ["#bfe2c6", "#98d1b5", "#609f80", "#045944", "#1b4538"],
     blue: ["#c8eaf7", "#a3dcec", "#62b6d0", "#2d7496", "#0d3353"]
 };
-
+// documentation hierarchy data for D3 tree visualisation
 const documentation = {
     name: "Documentation",
     children: [
