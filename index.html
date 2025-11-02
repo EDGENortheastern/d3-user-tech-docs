@@ -24,8 +24,9 @@
         const pulse = (e) => {
             const selectedCircle = d3.select(e.currentTarget);
             const selectedRadius = Number(selectedCircle.attr("r"))
-            console.log(selectedRadius)
-
+            selectedCircle.interrupt() // stops ongoing transitions on the selected element
+            .transition().duration(300).attr("r", 100)
+            .transition().duration(300).attr("r", 50)
         }
         svg.append("circle")
             .attr("cx", 200)
