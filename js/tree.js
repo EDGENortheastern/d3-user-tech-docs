@@ -1,31 +1,23 @@
-// js/tree.js — unclipped, smooth, starts collapsed to a chosen depth
 (function () {
     const svg = d3.select("#doc-tree");
     const WIDTH = +svg.attr("width");
     const HEIGHT = +svg.attr("height");
 
-    // Real margins so labels never hit edges
     const M = { top: 120, right: 220, bottom: 80, left: 220 };
 
-    // Inner drawing area
     const IW = WIDTH - M.left - M.right;
     const IH = HEIGHT - M.top - M.bottom;
 
-    // How many levels to show initially: 0 = only root, 1 = root + children, 2 = + grandchildren, etc.
     const INITIAL_DEPTH = 1;
 
-    // Root group translated by margins
     const g = svg.append("g").attr("transform", `translate(${M.left},${M.top})`);
 
-    // Horizontal tree within the inner box
     const treeLayout = d3.tree().size([IH, IW]);
 
-    // Data
     let root = d3.hierarchy(window.documentation);
     root.x0 = IH / 2;
     root.y0 = 0;
 
-    // Collapse everything, then open to INITIAL_DEPTH
     collapseAll(root);
     expandToDepth(root, INITIAL_DEPTH);
 
@@ -59,13 +51,10 @@
     }
 
     function update(source) {
-        // Compute layout
         treeLayout(root);
 
-        // Curved horizontal links
         const linkGen = d3.linkHorizontal().x(d => d.y).y(d => d.x);
 
-        // ----- LINKS -----
         const linksSel = g.selectAll("path.link")
             .data(root.links(), d => d.target.id);
 
@@ -86,7 +75,6 @@
             .attr("d", _ => linkGen({ source: { x: source.x, y: source.y }, target: { x: source.x, y: source.y } }))
             .remove();
 
-        // ----- NODES -----
         const nodesSel = g.selectAll("g.node")
             .data(root.descendants(), d => d.id || (d.id = ++i));
 
@@ -128,7 +116,6 @@
             .attr("transform", _ => `translate(${source.y},${source.x})`)
             .remove();
 
-        // Stash positions for next transition
         root.each(d => { d.x0 = d.x; d.y0 = d.y; });
     }
 })();
