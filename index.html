@@ -2,43 +2,20 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Documentation Hierarchy Visualiser</title>
+
+    <link rel="stylesheet" href="styles.css" />
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="documentation.js"></script>
-    <title>Documentation Hierarchy Visualiser</title>
 </head>
 
 <body>
-    <h1>Documentation Hierarchy Visualiser</h1>
-    <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet">
-        <g></g>
-    </svg>
+    <h1 class="page-title">Documentation Hierarchy Visualiser</h1>
+    <svg id="doc-tree" width="1200" height="800"></svg>
 
-    <script>
-        const svg = d3.select("svg g")
-        const circleColour = colours.green[3];
-        console.log("Circle colour:", circleColour);
-
-        const pulse = (e) => {
-            const selectedCircle = d3.select(e.currentTarget);
-            const selectedRadius = Number(selectedCircle.attr("r"))
-            selectedCircle.interrupt() // stops ongoing transitions on the selected element
-            .transition().duration(300).attr("r", 100)
-            .transition().duration(300).attr("r", 50)
-        }
-        svg.append("circle")
-            .attr("cx", 200)
-            .attr("cy", 200)
-            .attr("r", 50)
-            .attr("fill", colours.blue[4])
-            .style("cursor", "pointer")
-            .on("click", pulse);
-
-
-
-    </script>
+    <script src="js/tree.js"></script>
 </body>
 
 </html>

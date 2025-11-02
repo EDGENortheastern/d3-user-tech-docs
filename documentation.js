@@ -192,3 +192,5 @@ const documentation = {
         }
     ]
 };
+window.colours = colours;
+window.documentation = documentation;
