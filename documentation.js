@@ -45,11 +45,11 @@ const documentation = {
                     color: colours.green[1],
                     children: [
                         {
-                            name: "Functional Requirements Spec",
+                            name: "Functional",
                             color: colours.green[3]
                         },
                         {
-                            name: "Non-Functional Requirements",
+                            name: "Non-Functional",
                             color: colours.green[3]
                         },
                         { name: "User Stories", color: colours.green[3] }
