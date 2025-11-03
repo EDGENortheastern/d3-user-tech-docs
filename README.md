@@ -34,7 +34,7 @@ The Documentation Hierarchy Visualiser is built with [D3.js (Data-Driven Documen
 
 In this project, D3 dynamically converts a hierarchical JavaScript object (window.documentation) into an interactive, animated tree diagram. This visualisation is a [D3.js Tree Layout](https://d3js.org/d3-hierarchy/tree), part of D3’s [hierarchy module](https://d3js.org/d3-hierarchy). It uses the `d3.tree()` function to generate a node-link diagram of hierarchical data, where each node is connected to its parent by a path.
 
-The diagram reads its hierarchical structure from a JavaScript object named `window.documentation`, which is defined in the `documentation.js` file.
+The diagram reads its hierarchical structure from a JavaScript object named `window.documentation`, which is defined in the [`documentation.js`](https://github.com/EDGENortheastern/d3-user-tech-docs/blob/main/documentation.js) file.
 
 D3 converts this object into a hierarchy using:
 
