@@ -36,8 +36,26 @@ In this project, D3 dynamically converts a hierarchical JavaScript object (windo
 
 The diagram reads its hierarchical structure from a JavaScript object named `window.documentation`, which is defined in the [`documentation.js`](https://github.com/EDGENortheastern/d3-user-tech-docs/blob/main/documentation.js) file.
 
-D3 converts this object into a hierarchy using:
+D3 [converts this object into a hierarchy](https://github.com/EDGENortheastern/d3-user-tech-docs/blob/main/js/tree.js#L17) using:
 
 ```js
 let root = d3.hierarchy(window.documentation);
 ```
+
+### 🧩 Running the Project Locally
+
+To run the Documentation Hierarchy Visualiser on your local machine, follow these steps:
+
+1. Clone the repository
+
+   ```bash
+   git clone https://github.com/EDGENortheastern/d3-user-tech-docs.git
+   ```
+
+2. Navigate into the repository
+
+   ```bash
+   cd d3-user-tech-docs
+   ```
+
+3. Open the [`index.html`](https://github.com/EDGENortheastern/d3-user-tech-docs/blob/main/index.html) file in your browser.
