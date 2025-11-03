@@ -3,7 +3,7 @@
     const WIDTH = +svg.attr("width");
     const HEIGHT = +svg.attr("height");
 
-    const M = { top: 120, right: 220, bottom: 80, left: 220 };
+    const M = { top: 60, right: 220, bottom: 80, left: 220 };
 
     const IW = WIDTH - M.left - M.right;
     const IH = HEIGHT - M.top - M.bottom;
